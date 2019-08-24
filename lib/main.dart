@@ -39,10 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title, style: TextStyle(fontSize: 24),),
+        title: Text(widget.title, style: TextStyle(fontSize: 24)),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add,color: Colors.white), onPressed: null,tooltip: 'Add new task')
+        ],
       ),
       drawer: Drawer(),
+      
       body: Center(),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
