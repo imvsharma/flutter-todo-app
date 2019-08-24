@@ -9,10 +9,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/':(context) => MyHomePage(title: 'Task Manager'),
+        '/addnewtask': (context) => AddNewTaskScreen()
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Task Manager'),
+      /* home: MyHomePage(title: 'Task Manager'), */
     );
   }
 }
@@ -42,17 +47,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title, style: TextStyle(fontSize: 24)),
         centerTitle: true,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.add,color: Colors.white), onPressed: null,tooltip: 'Add new task')
+          IconButton(icon: Icon(Icons.add,color: Colors.white), onPressed: () {
+            Navigator.pushNamed(context, '/addnewtask');
+          } ,tooltip: 'Add new task')
         ],
       ),
       drawer: Drawer(),
-      
-      body: Center(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      body: Center()
     );
   }
 }
+
+
+class AddNewTaskScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Add new task'),)
+    );
+
+  }
+}
+
