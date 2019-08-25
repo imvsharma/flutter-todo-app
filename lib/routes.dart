@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
 import './screens/home.dart';
-import './widgets/createTask.dart';
+import './screens/addtask.dart';
 
 final routes = {
     '/':(context) => HomeScreen(),
-    '/addnewtask': (context) => CreateTaskForm()
+    '/addnewtask': (context) => CreateTaskScreen()
 };
 
