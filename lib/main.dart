@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './widgets/createTask.dart';
+import './screens/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,8 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/':(context) => MyHomePage(title: 'Task Manager'),
-        '/addnewtask': (context) => AddNewTaskScreen()
+        '/':(context) => HomeScreen(),
+        '/addnewtask': (context) => CreateTaskForm()
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -32,13 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +53,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
+/* 
 class AddNewTaskScreen extends StatelessWidget {
+  final _formkey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Add new task'),)
+      appBar: AppBar(title: Text('Add new task'),),
+      body: SafeArea(
+        top: false,
+        bottom: false,
+        child: Form(
+          key: _formkey,
+          
+          child: ListView(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            children: <Widget>[
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Task name',
+                  border: OutlineInputBorder(),
+                  
+                ),
+              ),
+              TextField(
+                maxLength: 5,
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(hintText: 'Enter task description', border: OutlineInputBorder(), labelText: 'Task description'),
+              ),
+            ],
+          )
+        ),),
     );
 
   }
 }
 
+ */
