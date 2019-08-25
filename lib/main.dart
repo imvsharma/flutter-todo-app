@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import './widgets/createTask.dart';
-import './screens/home.dart';
+import './app.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
+/* class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,8 +22,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
+ */
+/* class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -52,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+ */
 /* 
 class AddNewTaskScreen extends StatelessWidget {
   final _formkey = GlobalKey();
