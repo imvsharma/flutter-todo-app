@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/emptyList.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,7 +26,9 @@ class HomeScreenState extends State<HomeScreen> {
             }
           )
         ],
+        
       ),
+      body: EmptyTaskList(),
     );
   }
 }
